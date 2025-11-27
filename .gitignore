@@ -1,0 +1,15 @@
+# Dependencias (CRÍTICO)
+node_modules/
+
+# Build de producción
+dist/
+
+# Cache de Astro
+.astro/
+
+# Variables de entorno
+.env
+.env.*
+
+# Mac OS
+.DS_Store
