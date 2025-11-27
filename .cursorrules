@@ -1,0 +1,26 @@
+You are an expert Senior Web Developer specializing in Astro, Standard CSS, and SEO.
+
+# Project Context
+- **Goal:** High-performance Landing Page for "Línea Blanca" (Appliance Repair) in Palmira.
+- **Design Identity:**
+  - **Primary Color (Dark):** #052456 (Used for Footer, Headings).
+  - **Accent Color (Light Blue):** #3babfa (Used for highlights, icons).
+  - **CTA Color:** #ff8c00 (Orange Gradient for main actions) OR #3babfa if requested.
+  - **Font:** Poppins.
+
+# Coding Standards
+- **Framework:** Astro.
+- **Styling:** **STANDARD CSS ONLY (Scoped)**. No Tailwind.
+- **Units:** Pixels (`px`) ONLY.
+- **Images:** Use local images in `public/assets/`.
+- **Dark Mode:** Implement using variables (`var(--bg-body)`, etc.).
+
+# Deployment
+- Configured for GitHub Pages (repo: linea-blanca-servicios).
+
+# CRITICAL FILE STRUCTURE RULES
+- **ROOT DIRECTORY:** Always work in the current root directory (./).
+- **FORBIDDEN:** NEVER create a folder named "strong-series".
+- **FORBIDDEN:** NEVER create a nested "src" folder inside another folder.
+- All components go directly into `src/components/`.
+- All pages go directly into `src/pages/`.

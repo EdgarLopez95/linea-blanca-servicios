@@ -1,0 +1,222 @@
+---
+---
+
+<footer class="site-footer">
+	<div class="container footer-container">
+		<div class="footer-col footer-brand">
+			<img src="/linea-blanca/assets/logo-blanco.svg" alt="Línea Blanca - Servicio Técnico en Palmira" class="footer-logo" width="200" height="90" />
+			<p class="footer-description">
+				Expertos en reparación de línea blanca en Palmira. Recuperamos la vida útil de tus electrodomésticos con garantía.
+			</p>
+			<div class="social-links">
+				<a href="#" class="social-link" aria-label="Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+					</svg>
+				</a>
+				<a href="#" class="social-link" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+						<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+						<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div class="footer-col footer-links">
+			<h3>Nuestros Servicios</h3>
+			<ul>
+				<li><a href="#servicios">Lavadoras</a></li>
+				<li><a href="#servicios">Neveras</a></li>
+				<li><a href="#servicios">Aires Acondicionados</a></li>
+				<li><a href="#servicios">Venta de Repuestos</a></li>
+			</ul>
+		</div>
+		<div class="footer-col footer-contact">
+			<h3>Contáctanos</h3>
+			<ul class="contact-info">
+				<li>
+					<span class="contact-icon">📍</span>
+					<span>Cl. 28 #Cr18-27, Palmira</span>
+				</li>
+				<li>
+					<span class="contact-icon">📞</span>
+					<a href="tel:+573183180948">318 318 0948</a>
+				</li>
+				<li>
+					<span class="contact-icon">📧</span>
+					<a href="mailto:contacto@lineablanca.com">contacto@lineablanca.com</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>© 2025 Línea Blanca. Todos los derechos reservados.</p>
+		<a href="#privacidad">Política de Privacidad</a>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		background-color: var(--color-primary);
+		color: #ffffff;
+		padding: 80px 0 40px;
+	}
+
+	@media (max-width: 768px) {
+		.site-footer {
+			padding-bottom: 80px;
+		}
+	}
+
+	.footer-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+		text-align: center;
+	}
+
+	.footer-logo {
+		height: 90px;
+		width: auto;
+		margin: 0 auto 20px;
+		display: block;
+	}
+
+	.footer-description {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 16px;
+		line-height: 1.6;
+		margin-bottom: 24px;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 15px;
+		justify-content: center;
+	}
+
+	.social-link {
+		color: #fff;
+		transition: color 0.3s ease;
+	}
+
+	.social-link:hover {
+		color: var(--color-accent);
+	}
+
+	.social-link svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.footer-col h3 {
+		color: #ffffff;
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.footer-col ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.footer-col a {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-col a:hover {
+		color: var(--color-accent);
+	}
+
+	.contact-info {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.contact-info li {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.contact-info .contact-icon {
+		font-size: 18px;
+		line-height: 1;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	.footer-bottom {
+		max-width: 1200px;
+		margin: 40px auto 0;
+		padding: 10px;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		align-items: center;
+	}
+
+	.footer-bottom p,
+	.footer-bottom a {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 14px;
+	}
+
+	.footer-bottom a {
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-bottom a:hover {
+		color: var(--color-accent);
+	}
+
+	@media (min-width: 1024px) {
+		.site-footer {
+			padding: 100px 0 50px;
+		}
+
+		.footer-container {
+			grid-template-columns: 1.5fr 1fr 1fr;
+			gap: 60px;
+			text-align: left;
+		}
+
+		.footer-brand {
+			text-align: left;
+		}
+
+		.footer-logo {
+			margin: 0 0 20px 0;
+		}
+
+		.social-links {
+			justify-content: flex-start;
+		}
+
+		.footer-col ul {
+			align-items: flex-start;
+		}
+
+		.contact-info {
+			align-items: flex-start;
+		}
+	}
+</style>
+

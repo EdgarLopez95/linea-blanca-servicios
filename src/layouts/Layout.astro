@@ -1,0 +1,67 @@
+---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileBar from '../components/MobileBar.astro';
+
+const siteURL = 'https://edgarlopez95.github.io/linea-blanca';
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImage = `${siteURL}/assets/hero-bg.jpg`;
+const title = 'Línea Blanca | Reparación de Neveras y Lavadoras en Palmira';
+const description = 'Servicio técnico Palmira especializado en arreglo de lavadoras, mantenimiento de neveras, aire acondicionado y repuestos línea blanca. Técnicos certificados a domicilio.';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/linea-blanca/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="servicio técnico Palmira, arreglo de lavadoras, mantenimiento de neveras, aire acondicionado, repuestos línea blanca" />
+		<meta name="robots" content="index, follow" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="es_CO" />
+		<meta property="og:site_name" content="Línea Blanca - Servicio Técnico Palmira" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem('theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (theme === 'dark' || (!theme && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+		<MobileBar />
+	</body>
+</html>
+
+

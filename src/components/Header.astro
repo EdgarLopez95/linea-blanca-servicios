@@ -1,0 +1,76 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="site-header">
+	<div class="container header-container">
+		<a href="/linea-blanca/" class="logo-link">
+			<img src="/linea-blanca/assets/logo-original.svg" alt="Línea Blanca - Servicio Técnico en Palmira" class="header-logo logo-light" width="200" height="80" />
+			<img src="/linea-blanca/assets/logo-blanco.svg" alt="Línea Blanca - Servicio Técnico en Palmira" class="header-logo logo-dark" width="200" height="80" />
+		</a>
+		<div class="header-actions">
+			<ThemeToggle />
+		</div>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		background-color: var(--bg-card);
+		box-shadow: 0 2px 8px var(--shadow-color);
+		transition: background-color 0.3s ease;
+	}
+
+	.header-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 16px 24px;
+	}
+
+	.logo-link {
+		text-decoration: none;
+		color: var(--color-primary);
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	.header-logo {
+		height: 50px;
+		width: auto;
+		display: block;
+		transition: opacity 0.3s ease;
+	}
+
+	.logo-dark {
+		display: none;
+	}
+
+	html.dark .logo-light {
+		display: none;
+	}
+
+	html.dark .logo-dark {
+		display: block;
+	}
+
+	.header-actions {
+		display: flex;
+		align-items: center;
+	}
+
+	@media (min-width: 768px) {
+		.header-container {
+			padding: 15px 40px;
+		}
+
+		.header-logo {
+			height: 80px;
+		}
+	}
+</style>
+

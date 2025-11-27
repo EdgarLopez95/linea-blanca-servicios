@@ -1,0 +1,156 @@
+---
+---
+
+<section class="section testimonials-section">
+	<div class="container">
+		<h2>Más que clientes, vecinos satisfechos en Palmira</h2>
+		<div class="reviews-grid">
+			<article class="review-card">
+				<div class="stars">⭐⭐⭐⭐⭐</div>
+				<p class="review-text">
+					"Se me dañó la nevera con la compra del mes. Llegaron en 2 horas al barrio Las Mercedes. ¡Salvaron mi comida!"
+				</p>
+				<p class="review-author">— Claudia Martínez</p>
+			</article>
+			<article class="review-card">
+				<div class="stars">⭐⭐⭐⭐⭐</div>
+				<p class="review-text">
+					"Pensé que tenía que comprar lavadora nueva, pero era solo un repuesto. Honestos y profesionales."
+				</p>
+				<p class="review-author">— Carlos Andrés P.</p>
+			</article>
+			<article class="review-card">
+				<div class="stars">⭐⭐⭐⭐⭐</div>
+				<p class="review-text">
+					"Instalaron los aires de mi oficina. Trabajo impecable y limpio."
+				</p>
+				<p class="review-author">— Ferretería La 28</p>
+			</article>
+		</div>
+		<div class="stats-bar">
+			<div class="stat-item">
+				<div class="stat-number">+10</div>
+				<div class="stat-label">Años de Experiencia</div>
+			</div>
+			<div class="stat-item">
+				<div class="stat-number">+2500</div>
+				<div class="stat-label">Equipos Reparados</div>
+			</div>
+			<div class="stat-item">
+				<div class="stat-number">100%</div>
+				<div class="stat-label">Garantía Certificada</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.testimonials-section {
+		background-color: var(--bg-body);
+	}
+
+	.testimonials-section h2 {
+		color: var(--text-main);
+		font-size: 32px;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	.reviews-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		margin-bottom: 40px;
+	}
+
+	.review-card {
+		background-color: var(--bg-section-alt);
+		border: 1px solid var(--shadow-color);
+		border-radius: 16px;
+		padding: 30px;
+	}
+
+	.stars {
+		font-size: 20px;
+		margin-bottom: 12px;
+		line-height: 1;
+	}
+
+	.review-text {
+		color: var(--text-muted);
+		font-size: 16px;
+		line-height: 1.6;
+		font-style: italic;
+		margin-bottom: 16px;
+	}
+
+	.review-author {
+		color: var(--text-main);
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.stats-bar {
+		background: var(--bg-card);
+		border: 1px solid var(--shadow-color);
+		border-radius: 24px;
+		box-shadow: 0 10px 30px var(--shadow-color);
+		max-width: 1000px;
+		margin: 60px auto 0;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.stat-item {
+		padding: 40px 20px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 1px solid var(--shadow-color);
+	}
+
+	.stat-item:last-child {
+		border-bottom: none;
+	}
+
+	.stat-number {
+		color: var(--color-accent);
+		font-size: 48px;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	.stat-label {
+		color: var(--text-muted);
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	@media (min-width: 768px) {
+		.reviews-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.stats-bar {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.stat-item {
+			border-bottom: none;
+			border-right: 1px solid var(--shadow-color);
+		}
+
+		.stat-item:last-child {
+			border-right: none;
+		}
+
+		.stat-number {
+			font-size: 56px;
+		}
+	}
+</style>
+
