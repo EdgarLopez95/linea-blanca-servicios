@@ -119,3 +119,10 @@ body {
 	}
 }
 
+/* ============================================
+   Clase de Ocultamiento para Presentación por Fases
+   ============================================ */
+.client-hidden-content {
+	display: none !important; /* El !important es clave para asegurar que se oculte */
+}
+
