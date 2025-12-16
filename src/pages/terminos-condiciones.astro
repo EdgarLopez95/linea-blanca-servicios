@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Términos y Condiciones | Línea Blanca Servicios Palmira"
+	description="Términos y condiciones de uso de los servicios de Línea Blanca Servicios en Palmira."
+	hideNavigation={true}
+>
+	<div class="legal-content">
+		<a href="/linea-blanca-servicios/" class="modal-close-button">← Regresar a la Página Principal</a>
+		<h1>Términos y Condiciones del Servicio</h1>
+		
+		<p>
+			Bienvenido a nuestro sitio web. Al acceder y utilizar nuestros servicios, usted acepta regirse por los siguientes términos y condiciones.
+		</p>
+
+		<h2>Aceptación de Términos</h2>
+		<p>
+			Al acceder y utilizar este sitio web, usted acepta cumplir con estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, le recomendamos que no utilice nuestro sitio web o servicios.
+		</p>
+
+		<h2>Descripción del Servicio</h2>
+		<p>
+			Línea Blanca Servicios ofrece servicios técnicos especializados en reparación, mantenimiento e instalación de electrodomésticos de línea blanca, incluyendo neveras, lavadoras, aires acondicionados y venta de repuestos. Todos los servicios se realizan por técnicos certificados y con garantía de trabajo.
+		</p>
+
+		<h2>Limitación de Responsabilidad</h2>
+		<p>
+			Línea Blanca Servicios se compromete a realizar los servicios con la mayor calidad y profesionalismo. Sin embargo, no nos hacemos responsables por daños preexistentes no detectados durante la evaluación inicial, ni por el uso inadecuado de los equipos reparados después de nuestro servicio. La garantía aplica únicamente a las reparaciones realizadas por nuestro personal técnico.
+		</p>
+
+		<p>
+			Línea Blanca Servicios se reserva el derecho de modificar estos términos en cualquier momento. Última actualización: Diciembre de 2025.
+		</p>
+	</div>
+</Layout>
+
+<style>
+	.legal-content {
+		max-width: 800px;
+		margin: 50px auto;
+		padding: 0 24px;
+		color: var(--text-main);
+		line-height: 1.8;
+	}
+
+	.legal-content h1 {
+		font-size: 32px;
+		font-weight: 700;
+		color: var(--color-primary);
+		margin-bottom: 24px;
+	}
+
+	.legal-content h2 {
+		font-size: 24px;
+		font-weight: 600;
+		color: var(--color-primary);
+		margin-top: 32px;
+		margin-bottom: 16px;
+	}
+
+	.legal-content p {
+		margin-bottom: 16px;
+		color: var(--text-muted);
+		font-size: 16px;
+	}
+
+	.modal-close-button {
+		display: inline-block;
+		margin-bottom: 24px;
+		padding: 10px 20px;
+		background-color: var(--color-primary);
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 600;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+	}
+
+	.modal-close-button:hover {
+		background-color: var(--color-accent);
+		transform: translateX(-4px);
+	}
+
+	@media (min-width: 768px) {
+		.legal-content {
+			margin: 80px auto;
+			padding: 0 40px;
+		}
+
+		.legal-content h1 {
+			font-size: 40px;
+		}
+
+		.legal-content h2 {
+			font-size: 28px;
+		}
+
+		.legal-content p {
+			font-size: 18px;
+		}
+	}
+</style>
+
+<script>
+	// Cerrar modal si se está mostrando en un iframe
+	if (window.parent !== window) {
+		// Estamos en un iframe
+		const closeButton = document.querySelector('.modal-close-button');
+		if (closeButton) {
+			closeButton.addEventListener('click', function(e) {
+				e.preventDefault();
+				// Enviar mensaje al padre para cerrar el modal
+				if (window.parent) {
+					window.parent.postMessage('closeLegalModal', '*');
+				}
+			});
+		}
+	}
+</script>
+

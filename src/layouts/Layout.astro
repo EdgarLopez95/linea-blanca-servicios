@@ -11,8 +11,16 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 const siteURL = 'https://edgarlopez95.github.io/linea-blanca-servicios';
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const ogImage = `${siteURL}/assets/hero-bg.jpg`;
-const title = 'Línea Blanca | Reparación de Neveras y Lavadoras en Palmira';
-const description = 'Servicio técnico Palmira especializado en arreglo de lavadoras, mantenimiento de neveras, aire acondicionado y repuestos línea blanca. Técnicos certificados a domicilio.';
+
+interface Props {
+	title?: string;
+	description?: string;
+	hideNavigation?: boolean;
+}
+
+const { title: pageTitle, description: pageDescription, hideNavigation = false } = Astro.props;
+const title = pageTitle || 'Línea Blanca | Reparación de Neveras y Lavadoras en Palmira';
+const description = pageDescription || 'Servicio técnico Palmira especializado en arreglo de lavadoras, mantenimiento de neveras, aire acondicionado y repuestos línea blanca. Técnicos certificados a domicilio.';
 ---
 
 <!doctype html>
@@ -47,6 +55,62 @@ const description = 'Servicio técnico Palmira especializado en arreglo de lavad
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
 		
+		<!-- Schema Markup JSON-LD - LocalBusiness -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Línea Blanca Servicios Técnicos en Palmira",
+			"image": `${siteURL}/assets/logo-original.svg`,
+			"url": siteURL,
+			"telephone": "+573183180948",
+			"priceRange": "$$",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Cl. 28 #Cll18-27",
+				"addressLocality": "Palmira",
+				"addressRegion": "Valle del Cauca",
+				"postalCode": "763022",
+				"addressCountry": "CO"
+			},
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday"
+					],
+					"opens": "08:00",
+					"closes": "17:00"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": [
+						"Saturday"
+					],
+					"opens": "08:00",
+					"closes": "12:00"
+				}
+			],
+			"areaServed": {
+				"@type": "City",
+				"name": "Palmira, Valle del Cauca"
+			},
+			"serviceType": [
+				"Reparación de Lavadoras",
+				"Reparación de Neveras",
+				"Servicio Técnico de Línea Blanca",
+				"Mantenimiento de Aires Acondicionados"
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "5.0",
+				"reviewCount": "25"
+			}
+		})} />
+		
 		<script is:inline>
 			(function() {
 				const theme = localStorage.getItem('theme');
@@ -58,11 +122,11 @@ const description = 'Servicio técnico Palmira especializado en arreglo de lavad
 		</script>
 	</head>
 	<body>
-		<Header />
+		{!hideNavigation && <Header />}
 		<slot />
-		<Footer />
-		<MobileBar />
-		<FloatingWhatsApp />
+		{!hideNavigation && <Footer />}
+		{!hideNavigation && <MobileBar />}
+		{!hideNavigation && <FloatingWhatsApp />}
 	</body>
 </html>
 

@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Política de Privacidad | Línea Blanca Servicios Palmira"
+	description="Política de privacidad de Línea Blanca Servicios. Conoce cómo protegemos y manejamos tu información personal."
+	hideNavigation={true}
+>
+	<div class="legal-content">
+		<a href="/linea-blanca-servicios/" class="modal-close-button">← Regresar a la Página Principal</a>
+		<h1>Política de Privacidad</h1>
+		
+		<p>
+			En Línea Blanca Servicios, respetamos su privacidad y nos comprometemos a proteger la información personal que recopilamos a través de este sitio web. La siguiente política describe cómo manejamos y protegemos sus datos.
+		</p>
+
+		<h2>Recolección de Información</h2>
+		<p>
+			Recopilamos información que usted nos proporciona directamente cuando se comunica con nosotros a través de formularios de contacto, llamadas telefónicas o mensajes de WhatsApp. Esta información puede incluir su nombre, número de teléfono, dirección de correo electrónico y detalles sobre el servicio que solicita.
+		</p>
+
+		<h2>Uso de la Información</h2>
+		<p>
+			Utilizamos la información recopilada para responder a sus consultas, proporcionar los servicios solicitados, mejorar nuestra atención al cliente y comunicarnos con usted sobre nuestros servicios. No compartimos su información personal con terceros sin su consentimiento, excepto cuando sea necesario para cumplir con obligaciones legales.
+		</p>
+
+		<h2>Enlaces a Terceros</h2>
+		<p>
+			Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad de estos sitios externos. Le recomendamos revisar las políticas de privacidad de cualquier sitio que visite.
+		</p>
+
+		<h2>Consentimiento</h2>
+		<p>
+			Al utilizar nuestro sitio web y proporcionarnos su información de contacto, usted consiente la recopilación y el uso de dicha información de acuerdo con esta Política de Privacidad.
+		</p>
+
+		<p>
+			Al utilizar nuestro sitio web, usted acepta los términos de esta Política de Privacidad. Última actualización: Diciembre de 2025.
+		</p>
+	</div>
+</Layout>
+
+<style>
+	.legal-content {
+		max-width: 800px;
+		margin: 50px auto;
+		padding: 0 24px;
+		color: var(--text-main);
+		line-height: 1.8;
+	}
+
+	.legal-content h1 {
+		font-size: 32px;
+		font-weight: 700;
+		color: var(--color-primary);
+		margin-bottom: 24px;
+	}
+
+	.legal-content h2 {
+		font-size: 24px;
+		font-weight: 600;
+		color: var(--color-primary);
+		margin-top: 32px;
+		margin-bottom: 16px;
+	}
+
+	.legal-content p {
+		margin-bottom: 16px;
+		color: var(--text-muted);
+		font-size: 16px;
+	}
+
+	.modal-close-button {
+		display: inline-block;
+		margin-bottom: 24px;
+		padding: 10px 20px;
+		background-color: var(--color-primary);
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 600;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+	}
+
+	.modal-close-button:hover {
+		background-color: var(--color-accent);
+		transform: translateX(-4px);
+	}
+
+	@media (min-width: 768px) {
+		.legal-content {
+			margin: 80px auto;
+			padding: 0 40px;
+		}
+
+		.legal-content h1 {
+			font-size: 40px;
+		}
+
+		.legal-content h2 {
+			font-size: 28px;
+		}
+
+		.legal-content p {
+			font-size: 18px;
+		}
+	}
+</style>
+
+<script>
+	// Cerrar modal si se está mostrando en un iframe
+	if (window.parent !== window) {
+		// Estamos en un iframe
+		const closeButton = document.querySelector('.modal-close-button');
+		if (closeButton) {
+			closeButton.addEventListener('click', function(e) {
+				e.preventDefault();
+				// Enviar mensaje al padre para cerrar el modal
+				if (window.parent) {
+					window.parent.postMessage('closeLegalModal', '*');
+				}
+			});
+		}
+	}
+</script>
+

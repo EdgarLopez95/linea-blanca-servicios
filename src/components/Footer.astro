@@ -52,9 +52,85 @@
 	</div>
 	<div class="footer-bottom">
 		<p>© 2025 Línea Blanca. Todos los derechos reservados.</p>
-		<a href="#privacidad">Política de Privacidad</a>
+		<div class="footer-legal-links">
+			<a href="/linea-blanca-servicios/politica-privacidad/" class="legal-link" data-modal-url="/linea-blanca-servicios/politica-privacidad/">Política de Privacidad</a>
+			<span class="footer-separator">|</span>
+			<a href="/linea-blanca-servicios/terminos-condiciones/" class="legal-link" data-modal-url="/linea-blanca-servicios/terminos-condiciones/">Términos y Condiciones</a>
+		</div>
 	</div>
 </footer>
+
+<!-- Modal para Páginas Legales -->
+<div id="legalModal" class="legal-modal">
+	<div class="legal-modal-content">
+		<button class="legal-modal-close" aria-label="Cerrar modal">×</button>
+		<iframe id="legalModalIframe" class="legal-modal-iframe" title="Contenido legal"></iframe>
+	</div>
+</div>
+
+<script>
+	(function() {
+		const modal = document.getElementById('legalModal');
+		const modalIframe = document.getElementById('legalModalIframe');
+		const closeButton = modal?.querySelector('.legal-modal-close');
+		const legalLinks = document.querySelectorAll('.legal-link');
+
+		// Abrir modal al hacer clic en enlaces legales
+		legalLinks.forEach(link => {
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+				const url = this.getAttribute('data-modal-url') || this.getAttribute('href');
+				if (modal && modalIframe && url) {
+					modalIframe.src = url;
+					modal.classList.add('active');
+					document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+				}
+			});
+		});
+
+		// Cerrar modal
+		function closeModal() {
+			if (modal) {
+				modal.classList.remove('active');
+				document.body.style.overflow = ''; // Restaurar scroll del body
+				// Limpiar iframe después de la animación
+				setTimeout(() => {
+					if (modalIframe) {
+						modalIframe.src = '';
+					}
+				}, 300);
+			}
+		}
+
+		// Cerrar con botón
+		if (closeButton) {
+			closeButton.addEventListener('click', closeModal);
+		}
+
+		// Cerrar al hacer clic fuera del contenido
+		if (modal) {
+			modal.addEventListener('click', function(e) {
+				if (e.target === modal) {
+					closeModal();
+				}
+			});
+		}
+
+		// Cerrar con tecla ESC
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && modal?.classList.contains('active')) {
+				closeModal();
+			}
+		});
+
+		// Escuchar mensaje del iframe para cerrar modal
+		window.addEventListener('message', function(e) {
+			if (e.data === 'closeLegalModal') {
+				closeModal();
+			}
+		});
+	})();
+</script>
 
 <style>
 	.site-footer {
@@ -185,6 +261,19 @@
 
 	.footer-bottom a:hover {
 		color: var(--color-accent);
+	}
+
+	.footer-legal-links {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.footer-separator {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 14px;
 	}
 
 	@media (min-width: 1024px) {
